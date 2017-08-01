@@ -1,0 +1,8 @@
+{
+  "name": "demo-app",
+  "description": "A barebones Node.js static file server app using Express 4.",
+  "repository": "https://github.com/kilavagora/node-js-demo",
+  "logo": "https://rawgit.com/kilvagora/node-js-demo/master/static/JavaScript.svg",
+  "keywords": ["node", "express", "static"]
+}
+
