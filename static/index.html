@@ -105,7 +105,6 @@ navigation"
     <!-- /.container -->
     <script>
       (function() {
-        //const xhr = new XMLHttpRequest();
         const weatherElement = document.getElementById("weather");
 
         fetch("/weather.json")
@@ -125,26 +124,6 @@ navigation"
           `;
             weatherElement.innerHTML = myTemplate;
           });
-
-        /* xhr.onload = function(e) {
-          if (this.status === 200) {
-            const data = JSON.parse(this.responseText);
-            const myTemplate = `
-          <h4>${"Date: " + data.currentWeather.date}</h4>
-          <h4>${"Location: " + data.currentWeather.location}</h4>
-          <h4>${"Temperature: " + data.currentWeather.temperature}</h4>
-          <h4>${"Humidity: " + data.currentWeather.humidity}</h4>
-          <h4>${"Pressure: " + data.currentWeather.pressure}</h4>
-          <h4>${"Climate: " + data.currentWeather.text}</h4>
-         
-          `;
-            weatherElement.innerHTML = myTemplate;
-          }
-        };
-
-        xhr.open("GET", "/weather.json");
-        xhr.send();
- */
       })();
     </script>
   </body>
