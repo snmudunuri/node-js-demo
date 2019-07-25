@@ -113,7 +113,17 @@ navigation"
             return response.json();
           })
           .then(function(myJson) {
-            console.log(JSON.stringify(myJson));
+            const data = JSON.parse(JSON.stringify(myJson));
+            const myTemplate = `
+          <h4>${"Date: " + data.currentWeather.date}</h4>
+          <h4>${"Location: " + data.currentWeather.location}</h4>
+          <h4>${"Temperature: " + data.currentWeather.temperature}</h4>
+          <h4>${"Humidity: " + data.currentWeather.humidity}</h4>
+          <h4>${"Pressure: " + data.currentWeather.pressure}</h4>
+          <h4>${"Climate: " + data.currentWeather.text}</h4>
+         
+          `;
+            weatherElement.innerHTML = myTemplate;
           });
 
         /* xhr.onload = function(e) {
