@@ -77,6 +77,16 @@ navigation">
   <script>
     (function () {
 
+      const xhr = new XMLHttpRequest();
+      xhr.onload = function(e) {
+        if(this.status === 200){
+          console.log(this.responseText);
+        }
+      };
+
+      xhr.open("GET","/Api/weather");
+      xhr.send();
+
     })();
   </script>
 </body>
