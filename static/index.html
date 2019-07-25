@@ -105,9 +105,18 @@ navigation"
     <!-- /.container -->
     <script>
       (function() {
-        const xhr = new XMLHttpRequest();
+        //const xhr = new XMLHttpRequest();
         const weatherElement = document.getElementById("weather");
-        xhr.onload = function(e) {
+
+        fetch("/weather.json")
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(myJson) {
+            console.log(JSON.stringify(myJson));
+          });
+
+        /* xhr.onload = function(e) {
           if (this.status === 200) {
             const data = JSON.parse(this.responseText);
             const myTemplate = `
@@ -125,6 +134,7 @@ navigation"
 
         xhr.open("GET", "/weather.json");
         xhr.send();
+ */
       })();
     </script>
   </body>
