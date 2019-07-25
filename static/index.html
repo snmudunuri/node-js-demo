@@ -113,10 +113,9 @@ navigation"
               return response.json();
             }
           })
-          .then(function(myJson) {
-            const data = JSON.parse(JSON.stringify(myJson));
+          .then(function(data) {
             const myTemplate = `
-          <h4>${"Date: " + data.currentWeather.date}</h4>
+          <h4>"Date: " ${data.currentWeather.date}</h4>
           <h4>${"Location: " + data.currentWeather.location}</h4>
           <h4>${"Temperature: " + data.currentWeather.temperature}</h4>
           <h4>${"Humidity: " + data.currentWeather.humidity}</h4>
