@@ -78,9 +78,14 @@ navigation">
     (function () {
 
       const xhr = new XMLHttpRequest();
+      const weatherElement = document.getElementById("weather");
       xhr.onload = function(e) {
         if(this.status === 200){
-          console.log(this.responseText);
+          const data = JSON.parse(this.responseText);
+          const myTemplate = `
+          <h4>${data.currentWeather.temperature}</h4>
+          `;
+          weatherElement.innerHTML = myTemplate;
         }
       };
 
