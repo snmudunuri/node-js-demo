@@ -109,7 +109,9 @@ navigation"
 
         fetch("/weather.json")
           .then(function(response) {
-            return response.json();
+            if (reponse.ok) {
+              return response.json();
+            }
           })
           .then(function(myJson) {
             const data = JSON.parse(JSON.stringify(myJson));
